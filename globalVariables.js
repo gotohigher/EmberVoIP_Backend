@@ -13,20 +13,19 @@
 // Allow peer connection from the outside of your network
 // (But not if they'r behing a symetric NAT, I didn't implement a TURN server)
 const peerConnectionOptions = {
-	iceServers: [{
-		urls: ["stun:stun.l.google.com:19302"]
-	}, {
-		urls: ["stun:stun1.l.google.com:19302"]
-	}, {
-		urls: ["stun:stun2.l.google.com:19302"]
-	}, {
-		urls: ["stun:stun3.l.google.com:19302"]
-	}]
+  iceServers: [
+    { url: "stun:stun.embervoip.net:3478" },
+    {
+      url: "turn:turn.embervoip.net:3478",
+      username: "guest",
+      credential: "test@Polaris",
+    },
+  ],
 };
 
 const rooms = new Map(); // <RoomId, ClientArray>
 
 module.exports = {
-	peerConnectionOptions,
-	rooms
-}
+  peerConnectionOptions,
+  rooms,
+};
