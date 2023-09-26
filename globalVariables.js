@@ -14,9 +14,9 @@
 // (But not if they'r behing a symetric NAT, I didn't implement a TURN server)
 const peerConnectionOptions = {
   iceServers: [
-    { url: "stun:stun.embervoip.net:3478" },
+    { urls: "stun:stun.embervoip.net:3478" },
     {
-      url: "turn:turn.embervoip.net:3478",
+      urls: "turn:turn.embervoip.net:3478",
       username: "guest",
       credential: "test@Polaris",
     },
